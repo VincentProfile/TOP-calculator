@@ -1,0 +1,23 @@
+.header{
+    margin: auto;
+    align-items: center;
+}
+.input{
+    width: auto;
+    height: auto;
+}
+button {
+    width: 80px;
+    height: 80px;
+}
+.clearBtn{
+    width: 160px;
+}
+.backSpaceBtn{
+    width: 160px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
