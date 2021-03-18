@@ -22,7 +22,6 @@ const operate = (operator, a, b) => {
 const input = document.querySelector('.input');
 
 const clickBtn = (e) => {
-    console.log(e.keyCode);
     // get button and click (multiply not working correctly)
     const btn = document.querySelector(`button[data-key="${e.keyCode}"]`);
     if (btn != null)
@@ -58,19 +57,19 @@ backSpaceBtn.addEventListener('click', () => {
 const numberBtns = document.querySelectorAll('.numberBtn');
 numberBtns.forEach((numberBtn) => {
     numberBtn.addEventListener('click', () => {
-        if (input.value === "Cannot be divided by zero"){
+        if (input.value === "Cannot be divided by zero") {
             clearAllValues();
-            input.value = numberBtn.innerText; 
-        }else if (input.value === "0"){
-            input.value = numberBtn.innerText; 
+            input.value = numberBtn.innerText;
+        } else if (input.value === "0") {
+            input.value = numberBtn.innerText;
         }
-        else if (operatorOn==true || evaluatedAns == true){
+        else if (operatorOn == true || evaluatedAns == true) {
             evaluatedAns = false;
             operatorOn = false;
             disableBtns(false);
-            input.value="";
+            input.value = "";
             input.value += numberBtn.innerText;
-        }else{
+        } else {
             input.value += numberBtn.innerText;
         }
     })
@@ -84,7 +83,7 @@ operatorBtns.forEach(operatorBtn => {
     operatorBtn.addEventListener('click', storeValuesAndCalculate);
 })
 function storeValuesAndCalculate(e) {
-    if (storeValue != "0" && input.value != ""){
+    if (storeValue != "0" && input.value != "" && operatorOn == false){
         getResult();
     }
     operatorOn = true;
