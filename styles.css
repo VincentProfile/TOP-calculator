@@ -5,6 +5,7 @@
 .input{
     width: auto;
     height: auto;
+    text-align: right;
 }
 button {
     width: 80px;
