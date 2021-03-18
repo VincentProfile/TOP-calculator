@@ -21,10 +21,14 @@ const operate = (operator, a, b) => {
 
 const input = document.querySelector('.input');
 
-const appendInput = (e) => {
-    //input.value += String.fromCharCode(e.keyCode);
+const clickBtn = (e) => {
+    console.log(e.keyCode);
+    // get button and click (multiply not working correctly)
+    const btn = document.querySelector(`button[data-key="${e.keyCode}"]`);
+    if (btn != null)
+        btn.click();
 }
-window.addEventListener('keydown', appendInput)
+window.addEventListener('keydown', clickBtn)
 
 function disableBtns(bool){
     clearBtn.disabled = bool;
