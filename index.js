@@ -112,8 +112,11 @@ evaluateBtn.addEventListener('click', getResult);
 function getResult() {
     operatorOn = false;
     if (input.value != "Cannot be divided by zero"){
-        let result =operate(getOperator(), storeValue, input.value); 
-        if (result%1 != 0)
+        let result = operate(getOperator(), storeValue, input.value); 
+        if (result == "Cannot be divided by zero"){
+            // skip next test
+        }
+        else if (result%1 != 0)
             result = Math.round(result * 10000000)/10000000;
         input.value = result;
         evaluatedAns = true;
